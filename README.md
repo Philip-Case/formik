@@ -3,7 +3,7 @@ Refactor Formik Form App exercise from MIT XPRO class
 <!--Expanded upon by Philip Case based on an MIT XPro class exercise August 2022-->
 
 
-<img src="./formik.png" style="max-width: 50%;">
+<img src="formik.png" style="max-width: 50%;">
 
 <h2>How to Run:</h2>
 
@@ -13,7 +13,6 @@ Refactor Formik Form App exercise from MIT XPRO class
 
 
 
-<img src="./formik.png" width="700">
 <h2>Roadmap Run:</h2>
 
 1.  Improve form field layout, spacing, and style
