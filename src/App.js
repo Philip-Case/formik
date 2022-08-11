@@ -1,58 +1,65 @@
-import React from 'react';
-import './App.css';
-import { useFormik } from 'formik';
+import React from "react";
+import { useFormik } from "formik";
+import './index.css';
+
+
+// Set Port
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), function() {
+    console.log('Server started on port '+app.get('port'));
+});
 
 function App() {
   const formik = useFormik({
     initialValues: {
-      username: '',
-      password: ''
+      email: "",
+      password: "",
     },
-    onSubmit: values => {
-      console.log('form:', values);
-      alert('Login successful')
+    onSubmit: (values) => {
+      alert("Login Successful");
     },
-    validate: values => {
+    validate: (values) => {
       let errors = {};
-      
-      if (!values.username) {
-        errors.username = 'Required'
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.username)) {
-        errors.username = 'Invalid email address';
-      }
-      
-      if(!values.password) {
-        errors.password = 'Required';
-      } else if (values.password.length < 6) {
-        errors.password = 'Password has to be longer than 6 characters';
-      }
-      
+      if (!values.email) errors.email = "field required";
+      if (!values.password) errors.password = "field required";
       return errors;
-
-    }
-  })
+    },
+  });
 
   return (
     <div>
-      <form onSubmit={formik.handleSubmit} >
-        <div id="nameField">
-          <div id="text">Username</div>
-          <input name="username" type="text" onChange={formik.handleChange} value={formik.values.username} />
-          <div id="nameError">
-            {formik.errors.username ? <div style={{color: "red"}}>{formik.errors.username}</div> : null }
+      <form onSubmit={formik.handleSubmit}>
+        <div>Email:</div>
+        <input
+          id="emailField"
+          type="text"
+          name="email"
+          onChange={formik.handleChange}
+          value={formik.values.email}
+        />
+        {formik.errors.email ? (
+          <div id="emailError" style={{ color: "red" }}>
+            {formik.errors.email}
           </div>
-        </div>
-
-        <div id="pswField">
-          <div id="text">Password</div>
-          <input name="password" type="text" onChange={formik.handleChange} value={formik.values.password} />
-          <div id="pswError">
-            {formik.errors.password ? <div style={{color: "red"}}>{formik.errors.password}</div> : null }
+        ) : null}
+        <div>Password:</div>
+        <input
+          id="pswField"
+          type="text"
+          name="password"
+          onChange={formik.handleChange}
+          value={formik.values.password}
+        />
+        <br />
+        {formik.errors.password ? (
+          <div id="pswError" style={{ color: "red" }}>
+            {formik.errors.password}
           </div>
-        </div>
-        <button id="submitBtn" type="submit">Submit</button>
+        ) : null}
+        <button id="submitBtn" type="submit">
+          Submit
+        </button>
       </form>
-
     </div>
   );
 }
