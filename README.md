@@ -1,25 +1,30 @@
-Formik React App 
-What Is It?
-My REACT App uses the Formik libraries to display and validate a user input form.  The form includes the following fields:
-
-Username
-Password
-Email
-
-A submit button and handler notify user if hypothetical log-in was successful.
+# Formik
+Refactor Formik Form App exercise from MIT XPRO class
+<!--Expanded upon by Philip Case based on an MIT XPro class exercise August 2022-->
 
 
-Initial Challenges:
-Ensuring folder architecture and library install
-Email Validation
+<img src="./formik.png" style="max-width: 50%;">
 
-Ideas for Future Improvements:
-Improve form field layout, spacing, and stylce
-Add password requirements that include more security
+<h2>How to Run:</h2>
+
+1. Enter your email address
+2. Enter your password
+3. Click the Submit Button
 
 
-Licence Disclosures:
-Bootstrap
-Formik
-REACT
 
+<img src="./formik.png" width="700">
+<h2>Roadmap Run:</h2>
+
+1.  Improve form field layout, spacing, and style
+2.  Add password requirements that include more security
+
+
+<h2> CHALLENGES</h2>
+None
+
+
+<h2>License Discolures:</h2>
+1. Bootstrap Libraries 
+2. Formik Libraries
+3. REACT Libraries
